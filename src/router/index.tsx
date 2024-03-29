@@ -3,6 +3,7 @@ import { lazy } from "react";
 
 import App from "../App";
 import { HomePage } from "@/pages/home";
+const AboutPage = lazy(() => import("@/pages/about"));
 const ErrorPage = lazy(() => import("@/pages/error"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <HomePage />,
+            },
+            {
+                path: "/about",
+                element: <AboutPage />,
             },
             {
                 path: "*",

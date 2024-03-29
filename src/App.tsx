@@ -8,7 +8,7 @@ function App() {
         <ThemeProvider>
             <Header />
 
-            <main>
+            <main className="mx-auto max-w-screen-2xl border">
                 <Suspense fallback={<p>Chargement...</p>}>
                     <Outlet />
                 </Suspense>
