@@ -9,7 +9,8 @@ function App() {
         <ThemeProvider>
             <Header />
 
-            <main className="mx-auto max-w-screen-2xl">
+            {/* className="mx-auto max-w-screen-2xl" */}
+            <main>
                 <Suspense fallback={<p>Chargement...</p>}>
                     <Outlet />
                 </Suspense>

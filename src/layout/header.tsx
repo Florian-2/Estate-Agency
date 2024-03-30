@@ -9,14 +9,13 @@ export function Header() {
     const isDesktop = useMediaQuery("(min-width: 768px)");
 
     return (
-        <header className="bg-gray-10 px-3">
-            <div className="mx-auto flex h-[68px] max-w-screen-2xl items-center justify-between text-sm lg:h-24 lg:text-base">
+        <header className="border-y border-gray-15 bg-gray-10 px-3">
+            <div className="mx-auto flex h-[68px] max-w-screen-2xl items-center justify-between text-sm lg:h-20 lg:text-base">
                 <a href="/" className="flex-shrink-0">
                     <img
-                        srcSet={`${logoMobile} 94w, ${logoLaptop} 114w , ${logoDesktop} 160w`}
+                        srcSet={`${logoMobile} 94w, ${logoDesktop} 160w`}
                         sizes="(min-width: 1024px) 160px,
-                            (min-width: 768px) 114px,
-                            94px"
+                            105px"
                         src={logoLaptop}
                         alt="Logo Estatein"
                     />

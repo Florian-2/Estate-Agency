@@ -18,6 +18,13 @@ const config = {
             },
         },
         extend: {
+            spacing: {
+                "3.5": "0.875rem",
+                "4.5": "1.125rem",
+            },
+            screens: {
+                "3xl": "1920px",
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
