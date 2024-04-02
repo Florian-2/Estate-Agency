@@ -76,4 +76,11 @@
         min-height: 100vh;
         background: hsl(var(--gray-08));
     }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: 600;
+    }
 }

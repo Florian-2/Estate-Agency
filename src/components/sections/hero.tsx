@@ -7,14 +7,14 @@ import { statistics } from "@/data/statistics";
 
 export function HeroSection() {
     return (
-        <div className="max-w-screen-3xl mx-auto grid auto-cols-auto grid-cols-1 lg:max-h-[622px] lg:grid-cols-2 lg:grid-rows-1 xl:max-h-[814px]">
-            <section className="flex items-center justify-center ">
-                <div className="max-w-2xl space-y-10 p-4 lg:space-y-12">
+        <div className="mx-auto grid max-w-screen-3xl auto-cols-auto grid-cols-1 lg:max-h-[622px] lg:grid-cols-2 lg:grid-rows-1 xl:max-h-[814px]">
+            <section className="flex px-2 lg:items-center lg:justify-center lg:pt-2">
+                <div className="w-full space-y-10 lg:max-w-2xl lg:space-y-12">
                     <div className="space-y-4 lg:space-y-5">
-                        <h1 className="text-3xl font-semibold lg:text-4xl xl:text-5xl">
+                        <h1 className="text-3xl lg:text-4xl xl:text-5xl">
                             Discover Your Dream <br /> Property with Estatein
                         </h1>
-                        <p className="text-sm text-gray-60 lg:text-base xl:text-lg">
+                        <p className="lg:text-base xl:text-lg">
                             Your journey to finding the perfect property begins here. Explore our
                             listings to find the home that matches your dreams.
                         </p>
