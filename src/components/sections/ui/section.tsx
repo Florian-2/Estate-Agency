@@ -6,5 +6,5 @@ type Props = PropsWithChildren & {
 };
 
 export function Section({ children, className }: Props) {
-    return <section className={cn("space-y-6 lg:space-y-14", className)}>{children}</section>;
+    return <section className={cn("space-y-6 lg:space-y-10", className)}>{children}</section>;
 }

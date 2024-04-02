@@ -14,7 +14,7 @@ export function PropertyCard({ property }: Props) {
     }).format(property.price);
 
     return (
-        <article className="http://192.168.1.176:5173/ space-y-5 rounded-xl border p-5">
+        <article className="space-y-5 rounded-xl border p-5">
             <div className="h-64 w-full overflow-hidden rounded-lg">
                 <img
                     src={property.picture}
