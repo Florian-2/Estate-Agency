@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export function Footer() {
     return (
         <>
-            <footer className="border-t p-20 px-2 lg:px-4">
-                <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 lg:flex-row lg:gap-20">
+            <footer className="border-t">
+                <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 p-20 px-2 lg:flex-row lg:gap-20 lg:px-4">
                     <div className="w-full space-y-5 lg:max-w-80 lg:space-y-6">
                         <img src={Logo} alt="Logo Estatein" />
 
