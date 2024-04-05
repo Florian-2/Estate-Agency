@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Header } from "./layout/header";
 import { Suspense } from "react";
 import { ThemeProvider } from "./components/theme/theme-provider";
+import { Footer } from "./layout/footer";
 
 // Voir si on gère le ligth mode ou pas
 function App() {
@@ -15,6 +16,8 @@ function App() {
                     <Outlet />
                 </Suspense>
             </main>
+
+            <Footer />
         </ThemeProvider>
     );
 }

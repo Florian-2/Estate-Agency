@@ -1,7 +1,7 @@
 import { Link } from "@/components/navigation/link";
 import { cn } from "@/lib/utils";
 import { PropsWithChildren } from "react";
-import StarsIcon from "@/assets/stars.svg";
+import { Sparkle } from "lucide-react";
 
 type SectionChildrenProps = PropsWithChildren & {
     link: { href?: string; label: string };
@@ -17,7 +17,12 @@ export function SectionHeader({ children, link, className }: SectionChildrenProp
             )}
         >
             <div className="space-y-2 lg:space-y-3">
-                <img src={StarsIcon} alt="stars icon" />
+                <div className="flex items-center gap-1 xl:-ml-3.5">
+                    <Sparkle className="fill-gray-40 text-gray-40" strokeWidth={0.5} />
+                    <Sparkle className="fill-gray-20 text-gray-20" size={18} strokeWidth={0.5} />
+                    <Sparkle className="fill-gray-20 text-gray-20" size={10} strokeWidth={0.5} />
+                </div>
+
                 {children}
             </div>
 

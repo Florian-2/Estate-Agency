@@ -1,3 +1,4 @@
+import { ExploreProperties } from "@/components/sections/explore-properties";
 import { Faq } from "@/components/sections/faq";
 import { HeroSection } from "@/components/sections/hero";
 import { Properties } from "@/components/sections/properties";
@@ -8,11 +9,13 @@ export function HomePage() {
         <>
             <HeroSection />
 
-            <div className="mx-auto mt-10 space-y-10 px-2 lg:mt-20 lg:max-w-screen-xl lg:space-y-24 lg:px-4 xl:max-w-screen-2xl">
+            <div className="mx-auto mt-10 max-w-screen-2xl space-y-10 px-2 lg:mt-20 lg:space-y-24 lg:px-4">
                 <Properties />
                 <Testimonials />
                 <Faq />
             </div>
+
+            <ExploreProperties />
         </>
     );
 }

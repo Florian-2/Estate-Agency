@@ -40,7 +40,7 @@ export function Carousel({ elements }: Props) {
             }}
             plugins={[
                 Autoplay({
-                    delay: 4_000,
+                    delay: 3500,
                     stopOnInteraction: false,
                     stopOnMouseEnter: true,
                 }),
