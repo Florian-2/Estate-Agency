@@ -4,7 +4,10 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./router/index.tsx";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const root = document.getElementById("root")!;
+root.classList.add("flex", "flex-col", "min-h-screen");
+
+ReactDOM.createRoot(root).render(
     <React.StrictMode>
         <RouterProvider router={router} />
     </React.StrictMode>,

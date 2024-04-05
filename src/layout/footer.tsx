@@ -8,34 +8,36 @@ import { Link } from "react-router-dom";
 export function Footer() {
     return (
         <>
-            <footer className="mx-auto flex flex-col gap-10 p-20 px-2 lg:max-w-screen-2xl lg:flex-row lg:gap-20 lg:px-4">
-                <div className="w-full space-y-5 lg:max-w-80 lg:space-y-6">
-                    <img src={Logo} alt="Logo Estatein" />
+            <footer className="border-t p-20 px-2 lg:px-4">
+                <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 lg:flex-row lg:gap-20">
+                    <div className="w-full space-y-5 lg:max-w-80 lg:space-y-6">
+                        <img src={Logo} alt="Logo Estatein" />
 
-                    <form onSubmit={(e) => e.preventDefault()}>
-                        <Input placeholder="Enter your email" />
-                    </form>
-                </div>
+                        <form onSubmit={(e) => e.preventDefault()}>
+                            <Input placeholder="Enter your email" />
+                        </form>
+                    </div>
 
-                <div className="flex flex-grow flex-wrap gap-10">
-                    {footerLinks.map((obj) => (
-                        <div key={obj.name} className="flex-auto space-y-6">
-                            <p>{obj.name}</p>
+                    <div className="flex flex-grow flex-wrap gap-10">
+                        {footerLinks.map((obj) => (
+                            <div key={obj.name} className="flex-auto space-y-6">
+                                <p className="text-base lg:text-lg">{obj.name}</p>
 
-                            <ul className="space-y-4">
-                                {obj.links.map((link) => (
-                                    <li>
-                                        <Link
-                                            to={link.href}
-                                            className="inline-block border-none p-0 hover:underline"
-                                        >
-                                            {link.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                                <ul className="space-y-4 text-sm lg:text-base">
+                                    {obj.links.map((link) => (
+                                        <li>
+                                            <Link
+                                                to={link.href}
+                                                className="inline-block border-none p-0 hover:underline"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </footer>
 

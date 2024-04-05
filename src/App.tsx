@@ -11,7 +11,7 @@ function App() {
             <Header />
 
             {/* className="mx-auto max-w-screen-2xl" */}
-            <main>
+            <main className="flex-grow">
                 <Suspense fallback={<p>Chargement...</p>}>
                     <Outlet />
                 </Suspense>
