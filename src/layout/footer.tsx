@@ -2,10 +2,18 @@ import Logo from "@/assets/logo-laptop.svg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { footerLinks } from "@/data/links-footer";
-import { Linkedin, Twitter, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Facebook, Send, MailPlus } from "lucide-react";
+import { FormEvent } from "react";
 import { Link } from "react-router-dom";
 
 export function Footer() {
+    function handleSubmit(e: FormEvent) {
+        e.preventDefault();
+
+        const form = e.target as HTMLFormElement;
+        form.reset();
+    }
+
     return (
         <>
             <footer className="border-t">
@@ -13,8 +21,21 @@ export function Footer() {
                     <div className="w-full space-y-5 lg:max-w-80 lg:space-y-6">
                         <img src={Logo} alt="Logo Estatein" />
 
-                        <form onSubmit={(e) => e.preventDefault()}>
-                            <Input placeholder="Enter your email" />
+                        <form onSubmit={handleSubmit} className="flex">
+                            <div className="relative w-full text-gray-60 has-[:focus-visible]:text-white">
+                                <div className="flex gap-1">
+                                    <Input
+                                        type="email"
+                                        placeholder="Enter your email"
+                                        className="peer h-fit w-fit py-3.5 pl-12 text-base placeholder:text-gray-60"
+                                    />
+                                    <Button className="p-4" variant={"outline"}>
+                                        <Send fill="white" size={22} color="white" />
+                                    </Button>
+                                </div>
+
+                                <MailPlus className="absolute left-3 top-1/2 z-10 -translate-y-1/2 transform" />
+                            </div>
                         </form>
                     </div>
 
