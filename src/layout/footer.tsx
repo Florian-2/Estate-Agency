@@ -16,18 +16,18 @@ export function Footer() {
 
     return (
         <>
-            <footer className="border-t">
-                <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 p-20 px-2 lg:flex-row lg:gap-20 lg:px-4">
-                    <div className="w-full space-y-5 lg:max-w-80 lg:space-y-6">
+            <footer className="mx-2 border-t py-20 lg:mx-4">
+                <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 lg:flex-row lg:gap-20">
+                    <div className=" space-y-5  lg:space-y-6">
                         <img src={Logo} alt="Logo Estatein" />
 
-                        <form onSubmit={handleSubmit} className="flex">
+                        <form onSubmit={handleSubmit} className="flex lg:max-w-80">
                             <div className="relative w-full text-gray-60 has-[:focus-visible]:text-white">
                                 <div className="flex gap-1">
                                     <Input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="peer h-fit w-fit py-3.5 pl-12 text-base placeholder:text-gray-60"
+                                        className="h-fit w-full py-3.5 pl-12 text-base placeholder:text-gray-60 md:w-fit"
                                     />
                                     <Button className="p-4" variant={"outline"}>
                                         <Send fill="white" size={22} color="white" />
@@ -41,21 +41,23 @@ export function Footer() {
 
                     <div className="flex flex-grow flex-wrap gap-10">
                         {footerLinks.map((obj) => (
-                            <div key={obj.name} className="flex-auto space-y-6">
-                                <p className="text-base lg:text-lg">{obj.name}</p>
+                            <div key={obj.name} className="flex flex-grow flex-col xl:items-end ">
+                                <div className="space-y-4">
+                                    <p className="text-base lg:text-lg">{obj.name}</p>
 
-                                <ul className="space-y-4 text-sm lg:text-base">
-                                    {obj.links.map((link) => (
-                                        <li>
-                                            <Link
-                                                to={link.href}
-                                                className="inline-block border-none p-0 hover:underline"
-                                            >
-                                                {link.label}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
+                                    <ul className="space-y-3 text-sm lg:text-base">
+                                        {obj.links.map((link, i) => (
+                                            <li key={i}>
+                                                <Link
+                                                    to={link.href}
+                                                    className="inline-block border-none p-0 hover:underline"
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -63,24 +65,26 @@ export function Footer() {
             </footer>
 
             <div className="bg-gray-10">
-                <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center justify-between gap-4 px-2 py-3 sm:flex-row lg:px-4">
-                    <div className="flex-col items-center gap-4 text-sm lg:flex-row">
-                        @2023 Estatein. All Rights Reserved.
-                        <Link to="#" className="hover:underline">
-                            Terms & Conditions
-                        </Link>
-                    </div>
+                <div className="mx-2 flex justify-center gap-4 py-3 lg:mx-4">
+                    <div className="flex max-w-screen-2xl flex-grow flex-col-reverse items-center justify-between sm:flex-row">
+                        <div className="flex-col items-center gap-4 text-sm lg:flex-row">
+                            @2023 Estatein. All Rights Reserved.
+                            <Link to="#" className="hover:underline">
+                                Terms & Conditions
+                            </Link>
+                        </div>
 
-                    <div className="space-x-2">
-                        <Button size={"icon"} className="rounded-full bg-gray-08">
-                            <Facebook fill="white" strokeWidth={0.5} size={19} />
-                        </Button>
-                        <Button size={"icon"} className="rounded-full bg-gray-08">
-                            <Linkedin fill="white" strokeWidth={0.5} size={19} />
-                        </Button>
-                        <Button size={"icon"} className="rounded-full bg-gray-08">
-                            <Twitter fill="white" strokeWidth={0.5} size={19} />
-                        </Button>
+                        <div className="space-x-2">
+                            <Button size={"icon"} className="rounded-full bg-gray-08">
+                                <Facebook fill="white" strokeWidth={0.5} size={19} />
+                            </Button>
+                            <Button size={"icon"} className="rounded-full bg-gray-08">
+                                <Linkedin fill="white" strokeWidth={0.5} size={19} />
+                            </Button>
+                            <Button size={"icon"} className="rounded-full bg-gray-08">
+                                <Twitter fill="white" strokeWidth={0.5} size={19} />
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

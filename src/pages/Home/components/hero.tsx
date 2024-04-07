@@ -1,9 +1,10 @@
+import { BusinessStatsCard } from "@/components/sections/statistics/business-stats-card";
+import { Button } from "@/components/ui/button";
+import { statistics } from "@/data/statistics";
+
 import towerDesktop from "@/assets/tower-desktop.webp";
 import towerLaptop from "@/assets/tower-laptop.webp";
 import towerMobile from "@/assets/tower-mobile.webp";
-import { BusinessStatsCard } from "@/components/cards/business-stats-card";
-import { Button } from "@/components/ui/button";
-import { statistics } from "@/data/statistics";
 
 export function HeroSection() {
     return (

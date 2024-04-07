@@ -12,7 +12,7 @@ export function ExploreProperties() {
         >
             <img src={Squares} alt="Squares" className="absolute left-0 top-0 -z-10 scale-y-[-1]" />
 
-            <div className="flex max-w-screen-2xl flex-grow flex-col items-end justify-center gap-5 px-2 py-4 md:flex-row md:justify-between md:gap-10 lg:px-4">
+            <div className="mx-2 flex max-w-screen-2xl flex-grow flex-col items-end justify-center gap-5 py-4 md:flex-row md:justify-between md:gap-10 lg:mx-4">
                 <div className="space-y-2 lg:space-y-3">
                     <SectionTitle>Start Your Real Estate Journey Today</SectionTitle>
                     <SectionDescription>
