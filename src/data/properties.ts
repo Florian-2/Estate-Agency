@@ -189,27 +189,3 @@ export const properties: Property[] = [
         price: 400000,
     },
 ];
-
-/*
-https://images.unsplash.com/photo-1661963657305-f52dcaeef418?w=450
-https://images.unsplash.com/photo-1544984243-ec57ea16fe25?w=450
-https://images.unsplash.com/photo-1591474200742-8e512e6f98f8?w=450
-https://images.unsplash.com/photo-1602075432748-82d264e2b463?w=450
-https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=450
-https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=450
-https://images.unsplash.com/photo-1593714604578-d9e41b00c6c6?w=450
-https://images.unsplash.com/photo-1607567618395-62fc2d132c3e?w=450
-https://images.unsplash.com/photo-1628012209120-d9db7abf7eab?w=450
-https://images.unsplash.com/photo-1598228723793-52759bba239c?w=450
-https://images.unsplash.com/photo-1607567618395-62fc2d132c3e?w=450
-https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=450
-https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=450
-https://images.unsplash.com/photo-1580494767366-82f4e74f5655?w=450
-https://images.unsplash.com/photo-1577842041275-2da5ff5d6c23?w=450
-https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=450
-https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=450
-https://images.unsplash.com/photo-1602895931791-d78ac88edc7b?w=450
-https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=450
-https://images.unsplash.com/photo-1564544288832-69d4014cc1f6?w=450
-https://images.unsplash.com/photo-1576941465093-fc22d70914e1?w=450
-*/

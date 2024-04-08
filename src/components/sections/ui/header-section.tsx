@@ -4,17 +4,11 @@ import { PropsWithChildren } from "react";
 import { Sparkle } from "lucide-react";
 
 type SectionChildrenProps = PropsWithChildren & {
-    withLink?: boolean;
     link?: { href?: string; label: string };
     className?: string;
 };
 
-export function SectionHeader({
-    children,
-    withLink = false,
-    link,
-    className,
-}: SectionChildrenProps) {
+export function SectionHeader({ children, link, className }: SectionChildrenProps) {
     return (
         <div
             className={cn(
@@ -32,16 +26,15 @@ export function SectionHeader({
                 {children}
             </div>
 
-            {withLink ||
-                (link && (
-                    <Link
-                        to={link.href || "#"}
-                        active
-                        className="w-full bg-gray-10 text-center text-sm md:w-fit xl:text-base"
-                    >
-                        {link.label}
-                    </Link>
-                ))}
+            {link && (
+                <Link
+                    to={link.href || "#"}
+                    active
+                    className="w-full bg-gray-10 text-center text-sm md:w-fit xl:text-base"
+                >
+                    {link.label}
+                </Link>
+            )}
         </div>
     );
 }

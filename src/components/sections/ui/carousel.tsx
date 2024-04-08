@@ -45,9 +45,9 @@ export function Carousel({ elements }: Props) {
                     stopOnMouseEnter: true,
                 }),
             ]}
-            className="block space-y-10"
+            className="space-y-10"
         >
-            <CarouselContent className="">
+            <CarouselContent>
                 {elements.map((element, i) => (
                     <CarouselItem className="pl-5 md:basis-1/2 lg:basis-1/3 xl:basis-1/4" key={i}>
                         {element}

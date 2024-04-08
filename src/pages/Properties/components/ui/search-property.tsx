@@ -10,6 +10,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Box, CalendarDays, DollarSign, Home, MapPin, Search } from "lucide-react";
 import { FormEvent } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const selects = [
     {
@@ -35,13 +36,19 @@ const selects = [
 ];
 
 export function SearchProperty() {
+    const [, setSearchParams] = useSearchParams();
+
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
-        window.alert("Ce site ");
+
+        const form = e.currentTarget as HTMLFormElement;
+        const query = new FormData(form).get("query") as string;
+
+        setSearchParams(query ? { query: query ?? "" } : "");
     }
 
     return (
-        <div className="mx-2 lg:mx-4 xl:-mt-14 xl:mb-20 ">
+        <div className="mx-2 lg:mx-4 xl:-mt-14">
             <div className="mx-auto my-8 flex max-w-screen-2xl flex-col items-center justify-center gap-4 *:w-full xl:gap-0">
                 <form
                     onSubmit={handleSubmit}
@@ -50,6 +57,7 @@ export function SearchProperty() {
                     <div className="flex overflow-hidden rounded-xl rounded-b-none border bg-gray-08 p-3.5">
                         <Input
                             placeholder="Search for a property"
+                            name="query"
                             className="h-auto items-stretch border-none text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
                         />
                         <Button className="gap-2 rounded-lg font-normal">
@@ -70,7 +78,10 @@ export function SearchProperty() {
 
                             <SelectContent>
                                 {Array.from({ length: 3 }).map((_, index) => (
-                                    <SelectItem value={`${select.name.toLowerCase()}-${index}`}>
+                                    <SelectItem
+                                        key={index}
+                                        value={`${select.name.toLowerCase()}-${index}`}
+                                    >
                                         {select.name} {index}
                                     </SelectItem>
                                 ))}

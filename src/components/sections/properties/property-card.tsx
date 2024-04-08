@@ -1,12 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Property } from "@/data/properties";
+import { cn } from "@/lib/utils";
 
 type Props = {
     property: Property;
+    className?: string;
 };
 
-export function PropertyCard({ property }: Props) {
+export function PropertyCard({ property, className }: Props) {
     const price = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -14,7 +16,7 @@ export function PropertyCard({ property }: Props) {
     }).format(property.price);
 
     return (
-        <article className="space-y-5 rounded-xl border p-5">
+        <article className={cn("space-y-5 rounded-xl border p-5", className)}>
             <div className="h-64 w-full overflow-hidden rounded-lg">
                 <img
                     src={property.picture}
