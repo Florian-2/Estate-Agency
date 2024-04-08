@@ -5,9 +5,9 @@ import { SectionHeader, SectionTitle, SectionDescription } from "./ui/header-sec
 import { Section } from "./ui/section";
 
 export function Properties() {
-    const propertiesList = properties.map((property) => (
-        <PropertyCard key={property.id} property={property} />
-    ));
+    const propertiesList = properties
+        .slice(0, 20)
+        .map((property) => <PropertyCard key={property.id} property={property} />);
 
     return (
         <Section>

@@ -1,15 +1,14 @@
+import { Pagination } from "@/components/navigation/pagination";
 import { PropertyCard } from "@/components/sections/properties/property-card";
-import {
-    SectionHeader,
-    SectionTitle,
-    SectionDescription,
-} from "@/components/sections/ui/header-section";
-import { Section } from "@/components/sections/ui/section";
 import { properties } from "@/data/properties";
 import { useSearchParams } from "react-router-dom";
 
+const PER_PAGES = 10;
+
 export function PropertiesResults() {
-    const [searchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const currentPage = Number(searchParams.get("page")) || 1;
+
     const query = (searchParams.get("query")?.toLowerCase() as string) || "";
 
     const results =
@@ -17,25 +16,45 @@ export function PropertiesResults() {
             ? properties.filter((property) => property.title.toLowerCase().includes(query))
             : properties;
 
+    const startIndex = (currentPage - 1) * PER_PAGES;
+    const endIndex = currentPage * PER_PAGES;
+
+    const totalPages = Math.ceil(results.length / PER_PAGES);
+
+    function handleChangePage(page: string) {
+        setSearchParams((params) => {
+            params.set("page", page);
+            return params;
+        });
+    }
+
     if (!results.length) {
-        return <p className="text-center  text-foreground">Not found...</p>;
+        return <p className="my-10 text-center text-foreground">Not found...</p>;
+    }
+
+    if (currentPage > totalPages) {
+        return (
+            <p className="my-10 text-center text-foreground">
+                Oops you went too far, go back a notch.
+            </p>
+        );
     }
 
     return (
-        <Section>
-            {/* <SectionHeader>
-                <SectionTitle>Discover a World of Possibilities</SectionTitle>
-                <SectionDescription>
-                    Our portfolio of properties is as diverse as your dreams. Explore the following
-                    categories to find the perfect property that resonates with your vision of home.
-                </SectionDescription>
-            </SectionHeader> */}
-
+        <div className="my-16 space-y-20">
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {results.map((property) => (
+                {results.slice(startIndex, endIndex).map((property) => (
                     <PropertyCard key={property.id} property={property} />
                 ))}
             </div>
-        </Section>
+
+            {totalPages > 1 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onChangePage={handleChangePage}
+                />
+            )}
+        </div>
     );
 }

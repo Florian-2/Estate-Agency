@@ -11,7 +11,7 @@ export function HeroSection() {
         <div className="mx-auto grid max-w-screen-3xl auto-cols-auto grid-cols-1 lg:max-h-[622px] lg:grid-cols-2 lg:grid-rows-1 xl:max-h-[814px]">
             <section className="flex px-2 lg:items-center lg:justify-center lg:pt-2">
                 <div className="w-full space-y-10 lg:max-w-2xl lg:space-y-12">
-                    <div className="space-y-4 lg:space-y-5">
+                    <div className="space-y-4 text-center md:text-start lg:space-y-5">
                         <h1 className="text-3xl lg:text-4xl xl:text-5xl">
                             Discover Your Dream <br /> Property with Estatein
                         </h1>

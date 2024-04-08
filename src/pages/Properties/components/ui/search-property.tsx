@@ -44,12 +44,12 @@ export function SearchProperty() {
         const form = e.currentTarget as HTMLFormElement;
         const query = new FormData(form).get("query") as string;
 
-        setSearchParams(query ? { query: query ?? "" } : "");
+        setSearchParams(query ? { query: query ?? "" } : undefined);
     }
 
     return (
-        <div className="mx-2 lg:mx-4 xl:-mt-14">
-            <div className="mx-auto my-8 flex max-w-screen-2xl flex-col items-center justify-center gap-4 *:w-full xl:gap-0">
+        <div className="mx-2 mt-8 lg:mx-4 xl:-mt-14">
+            <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center gap-4 *:w-full xl:gap-0">
                 <form
                     onSubmit={handleSubmit}
                     className="max-w-6xl rounded-xl bg-gray-10 p-2.5 xl:rounded-b-none"
