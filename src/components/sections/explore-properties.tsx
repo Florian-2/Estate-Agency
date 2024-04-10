@@ -7,7 +7,7 @@ export function ExploreProperties() {
     return (
         <section
             className={
-                "relative mx-auto mt-10 flex max-w-screen-3xl flex-col items-center justify-center overflow-hidden border-t px-2 py-12 md:flex-row lg:mt-20 lg:py-14"
+                "relative mt-10 flex w-full flex-col items-center justify-center overflow-hidden border-t px-2 py-12 md:flex-row lg:mt-20 lg:py-14"
             }
         >
             <img src={Squares} alt="Squares" className="absolute left-0 top-0 -z-10 scale-y-[-1]" />

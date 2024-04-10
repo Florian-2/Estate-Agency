@@ -41,8 +41,8 @@ export function PropertiesResults() {
     }
 
     return (
-        <div className="my-16 space-y-20">
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-10 space-y-20 lg:mt-16">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {results.slice(startIndex, endIndex).map((property) => (
                     <PropertyCard key={property.id} property={property} />
                 ))}

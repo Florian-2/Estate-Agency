@@ -1,5 +1,4 @@
 import { Faq, HeroSection } from "@/pages/Home/components";
-import { ExploreProperties } from "@/components/sections/explore-properties";
 import { Properties } from "@/components/sections/properties";
 import { Testimonials } from "@/components/sections/testimonials";
 
@@ -15,8 +14,6 @@ export function HomePage() {
                     <Faq />
                 </div>
             </div>
-
-            <ExploreProperties />
         </>
     );
 }

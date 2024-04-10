@@ -3,6 +3,7 @@ import { Header } from "./layout/header";
 import { Suspense } from "react";
 import { ThemeProvider } from "./components/theme/theme-provider";
 import { Footer } from "./layout/footer";
+import { ExploreProperties } from "./components/sections/explore-properties";
 
 // Voir si on gère le ligth mode ou pas
 function App() {
@@ -17,6 +18,7 @@ function App() {
                 </Suspense>
             </main>
 
+            <ExploreProperties />
             <Footer />
         </ThemeProvider>
     );
