@@ -1,7 +1,7 @@
 import { Carousel } from "./ui/carousel";
 import { properties } from "@/data/properties";
 import { PropertyCard } from "./properties/property-card";
-import { SectionHeader, SectionTitle, SectionDescription } from "./ui/header-section";
+import { SectionHeader, SectionTitle2, SectionDescription } from "./ui/header-section";
 import { Section } from "./ui/section";
 
 export function Properties() {
@@ -12,7 +12,7 @@ export function Properties() {
     return (
         <Section>
             <SectionHeader link={{ label: "View All Properties" }}>
-                <SectionTitle>Featured Properties</SectionTitle>
+                <SectionTitle2>Featured Properties</SectionTitle2>
                 <SectionDescription>
                     Explore our handpicked selection of featured properties. Each listing offers a
                     glimpse into exceptional homes and investments available through Estatein. Click

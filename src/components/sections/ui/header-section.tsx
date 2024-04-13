@@ -43,8 +43,12 @@ type ChildrenProps = PropsWithChildren & {
     className?: string;
 };
 
-export function SectionTitle({ children, className }: ChildrenProps) {
+export function SectionTitle2({ children, className }: ChildrenProps) {
     return <h2 className={cn("text-2xl lg:text-3xl", className)}>{children}</h2>;
+}
+
+export function SectionTitle1({ children, className }: ChildrenProps) {
+    return <h1 className={cn("text-3xl lg:text-4xl", className)}>{children}</h1>;
 }
 
 export function SectionDescription({ children, className }: ChildrenProps) {

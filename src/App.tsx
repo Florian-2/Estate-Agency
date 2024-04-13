@@ -11,7 +11,6 @@ function App() {
         <ThemeProvider>
             <Header />
 
-            {/* className="mx-auto max-w-screen-2xl" */}
             <main className="flex-grow">
                 <Suspense fallback={<p>Chargement...</p>}>
                     <Outlet />

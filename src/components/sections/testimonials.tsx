@@ -1,5 +1,5 @@
 import { Carousel } from "./ui/carousel";
-import { SectionHeader, SectionTitle, SectionDescription } from "./ui/header-section";
+import { SectionHeader, SectionTitle2, SectionDescription } from "./ui/header-section";
 import { Section } from "./ui/section";
 import { TestimonialCard } from "./testimonials/testimonials-card";
 import { testimonials } from "@/data/testimonials";
@@ -12,7 +12,7 @@ export function Testimonials() {
     return (
         <Section>
             <SectionHeader link={{ label: "View All Testimonials" }}>
-                <SectionTitle>What Our Clients Say</SectionTitle>
+                <SectionTitle2>What Our Clients Say</SectionTitle2>
                 <SectionDescription>
                     Read the success stories and heartfelt testimonials from our valued clients.
                     Discover why they chose Estatein for their real estate needs.

@@ -1,3 +1,5 @@
+import { FormEvent } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -9,8 +11,6 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Box, CalendarDays, DollarSign, Home, MapPin, Search } from "lucide-react";
-import { FormEvent } from "react";
-import { useSearchParams } from "react-router-dom";
 
 const selects = [
     {
@@ -58,7 +58,7 @@ export function SearchProperty() {
                         <Input
                             placeholder="Search for a property"
                             name="query"
-                            className="h-auto items-stretch border-none text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
+                            className="h-auto items-stretch border-none bg-background text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
                         />
                         <Button className="gap-2 rounded-lg font-normal">
                             <Search className="w-4 lg:w-4.5" />
@@ -70,10 +70,10 @@ export function SearchProperty() {
                 <div className="flex flex-wrap gap-5 rounded-lg bg-gray-10 p-2.5">
                     {selects.map((select, i) => (
                         <Select key={i}>
-                            <SelectTrigger className="h-12 min-w-52 flex-1 gap-2 font-medium text-gray-60">
+                            <SelectTrigger className="min-w-52 flex-1 gap-2 bg-background">
                                 {select.icon}
                                 <Separator orientation="vertical" />
-                                <SelectValue placeholder={select.name} />
+                                <SelectValue placeholder={select.name} className="text-red-500" />
                             </SelectTrigger>
 
                             <SelectContent>

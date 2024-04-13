@@ -1,7 +1,7 @@
 import { Carousel } from "@/components/sections/ui/carousel";
 import {
     SectionHeader,
-    SectionTitle,
+    SectionTitle2,
     SectionDescription,
 } from "@/components/sections/ui/header-section";
 import { Section } from "@/components/sections/ui/section";
@@ -16,7 +16,7 @@ export function Faq() {
     return (
         <Section>
             <SectionHeader link={{ label: "View All FAQ’s" }}>
-                <SectionTitle>Frequently Asked Questions</SectionTitle>
+                <SectionTitle2>Frequently Asked Questions</SectionTitle2>
                 <SectionDescription>
                     Find answers to common questions about Estatein's services, property listings,
                     and the real estate process. We're here to provide clarity and assist you every
