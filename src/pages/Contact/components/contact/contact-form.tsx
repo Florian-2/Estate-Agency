@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { ContactFormType, contactFormSchema } from "@/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import {
     Form,
@@ -36,9 +36,14 @@ export function ContactForm() {
             terms: undefined,
         },
     });
+    const { toast } = useToast();
 
     function onSubmit(values: ContactFormType) {
-        console.log(values);
+        toast({
+            variant: "success",
+            title: `Hello ${values.firstName} ${values.lastName}, your message has been sent, we will get back to you within 24 hours.`,
+            duration: 7_000,
+        });
     }
 
     return (

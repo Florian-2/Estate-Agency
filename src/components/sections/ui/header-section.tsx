@@ -11,10 +11,7 @@ type SectionChildrenProps = PropsWithChildren & {
 export function SectionHeader({ children, link, className }: SectionChildrenProps) {
     return (
         <div
-            className={cn(
-                "flex flex-col items-end justify-between gap-4 md:flex-row md:gap-14",
-                className,
-            )}
+            className={cn("flex flex-col  justify-between gap-4 md:flex-row md:gap-14", className)}
         >
             <div className="space-y-2 lg:space-y-3">
                 <div className="flex items-center gap-1 xl:-ml-3.5">
@@ -30,7 +27,7 @@ export function SectionHeader({ children, link, className }: SectionChildrenProp
                 <Link
                     to={link.href || "#"}
                     active
-                    className="w-full bg-gray-10 text-center text-sm md:w-fit xl:text-base"
+                    className="w-full self-end bg-gray-10 text-center text-sm md:w-fit xl:text-base"
                 >
                     {link.label}
                 </Link>
