@@ -4,14 +4,15 @@ import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Footer } from "./layout/footer";
 import { ExploreProperties } from "./components/sections/explore-properties";
+import { Loading } from "./components/ui/loader";
 
 function App() {
     return (
         <>
             <Header />
 
-            <main className="flex-grow">
-                <Suspense fallback={<p>Chargement...</p>}>
+            <main className="min-h-[50vh] flex-grow">
+                <Suspense fallback={<Loading />}>
                     <Outlet />
                 </Suspense>
             </main>

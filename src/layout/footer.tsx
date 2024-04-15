@@ -27,7 +27,7 @@ export function Footer() {
                                     <Input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="h-fit w-full py-3.5 pl-12 text-base placeholder:text-gray-60 md:w-fit"
+                                        className="h-fit w-full bg-gray-08 py-3.5 pl-12 text-base placeholder:text-gray-60 md:w-fit"
                                     />
                                     <Button className="p-4" variant={"outline"}>
                                         <Send fill="white" size={22} color="white" />
