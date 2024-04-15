@@ -10,9 +10,7 @@ type SectionChildrenProps = PropsWithChildren & {
 
 export function SectionHeader({ children, link, className }: SectionChildrenProps) {
     return (
-        <div
-            className={cn("flex flex-col  justify-between gap-4 md:flex-row md:gap-14", className)}
-        >
+        <div className={cn("flex flex-col justify-between gap-4 md:flex-row md:gap-14", className)}>
             <div className="space-y-2 lg:space-y-3">
                 <div className="flex items-center gap-1 xl:-ml-3.5">
                     <Sparkle className="fill-gray-40 text-gray-40" strokeWidth={0.5} />

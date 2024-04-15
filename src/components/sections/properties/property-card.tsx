@@ -33,7 +33,7 @@ export function PropertyCard({ property, className }: Props) {
 
                 <div className="flex flex-wrap gap-2">
                     {property.tags.map((tag, i) => (
-                        <Badge key={i} variant={"outline"}>
+                        <Badge key={i} variant={"outline"} className="gap-2 bg-gray-10">
                             {tag}
                         </Badge>
                     ))}

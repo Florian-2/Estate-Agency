@@ -11,7 +11,7 @@ function App() {
         <>
             <Header />
 
-            <main className="min-h-[50vh] flex-grow">
+            <main className="flex-grow">
                 <Suspense fallback={<Loading />}>
                     <Outlet />
                 </Suspense>

@@ -66,7 +66,7 @@ export function Footer() {
 
             <div className="bg-gray-10">
                 <div className="mx-2 flex justify-center gap-4 py-3 lg:mx-4">
-                    <div className="flex max-w-screen-2xl flex-grow flex-col-reverse items-center justify-between sm:flex-row">
+                    <div className="flex max-w-screen-2xl flex-grow flex-col-reverse items-center justify-between gap-2 sm:flex-row">
                         <div className="flex-col items-center gap-4 text-sm lg:flex-row">
                             @2023 Estatein. All Rights Reserved.
                             <Link to="#" className="hover:underline">
