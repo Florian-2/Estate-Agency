@@ -11,7 +11,7 @@ export function Properties() {
 
     return (
         <Section>
-            <SectionHeader link={{ label: "View All Properties" }}>
+            <SectionHeader link={{ href: "/properties", label: "View All Properties" }}>
                 <SectionTitle2>Featured Properties</SectionTitle2>
                 <SectionDescription>
                     Explore our handpicked selection of featured properties. Each listing offers a

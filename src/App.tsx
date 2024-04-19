@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Header } from "./layout/header";
 import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
@@ -21,6 +21,8 @@ function App() {
             <Footer />
 
             <Toaster />
+
+            <ScrollRestoration />
         </>
     );
 }
