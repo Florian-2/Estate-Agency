@@ -188,7 +188,6 @@ export const properties: Property[] = [
         tags: ["2 bedroom", "2 bathroom", "100 m²"],
         price: 400000,
     },
-    // ---------------------------------------------------------
     {
         id: 21,
         title: "Hilltop Villa Retreat",
@@ -459,18 +458,22 @@ export const properties: Property[] = [
         tags: ["4 bedroom", "4 bathroom", "400 m²"],
         price: 1600000,
     },
+    {
+        id: 51,
+        title: "Secluded Forest Retreat",
+        picture: "https://images.unsplash.com/photo-1580494767366-82f4e74f5655?w=450",
+        description:
+            "Find peace and quiet in this secluded 1-bedroom, 1-bathroom cabin nestled deep in the forest. Surrounded by trees and wildlife, this off-grid retreat is perfect for those seeking solitude and communion with nature.",
+        tags: ["1 bedroom", "1 bathroom", "60 m²"],
+        price: 150000,
+    },
+    {
+        id: 52,
+        title: "Beachside Condo",
+        picture: "https://images.unsplash.com/photo-1564544288832-69d4014cc1f6?w=450",
+        description:
+            "Enjoy coastal living in this stylish 2-bedroom, 2-bathroom condo just steps from the beach. With ocean views, resort-style amenities, and a vibrant seaside community, this property offers the ultimate beach lifestyle.",
+        tags: ["2 bedroom", "2 bathroom", "100 m²"],
+        price: 400000,
+    },
 ];
-
-/*
-https://images.unsplash.com/photo-1564544288832-69d4014cc1f6?q=80&w=450
-https://images.unsplash.com/photo-1587145198532-d63b9ffe5692?q=80&w=450
-https://images.unsplash.com/photo-1605352081508-2e09927ecfe3?q=80&w=450
-https://images.unsplash.com/photo-1586727568950-92b60d70fd69?q=80&w=450
-https://images.unsplash.com/photo-1618179223778-d75386dab95b?q=80&w=450
-https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=450
-https://images.unsplash.com/photo-1568391300292-a5a1d96b82aa?q=80&w=450
-https://images.unsplash.com/photo-1606788635679-6a4e2b9a7b07?q=80&w=450
-https://images.unsplash.com/photo-1511437104182-eaac70da49b5?q=80&w=450
-https://images.unsplash.com/photo-1464146072230-91cabc968266?q=80&w=450
-https://images.unsplash.com/photo-1588411398011-504a5a94ff6b?q=80&w=450
-*/

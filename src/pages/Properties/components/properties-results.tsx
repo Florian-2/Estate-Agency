@@ -1,9 +1,10 @@
 import { Pagination } from "@/components/navigation/pagination";
 import { PropertyCard } from "@/components/sections/properties/property-card";
 import { properties } from "@/data/properties";
+
 import { useSearchParams } from "react-router-dom";
 
-const PER_PAGES = 10;
+const PER_PAGES = 8;
 
 export function PropertiesResults() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -51,7 +52,8 @@ export function PropertiesResults() {
             {totalPages > 1 && (
                 <Pagination
                     currentPage={currentPage}
-                    totalPages={totalPages}
+                    totalCount={results.length}
+                    pageSize={PER_PAGES}
                     onChangePage={handleChangePage}
                 />
             )}
