@@ -3,8 +3,6 @@
 ```bash
 pnpm i
 ```
-<br/>
-
 ```bash
 pnpm dev
 ```
