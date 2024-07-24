@@ -28,7 +28,7 @@ export function ExploreProperties() {
                     className="w-full self-end text-center text-sm md:w-fit xl:text-base"
                     asChild
                 >
-                    <Link to="#">Explore Properties</Link>
+                    <Link to="/properties">Explore Properties</Link>
                 </Button>
             </div>
 

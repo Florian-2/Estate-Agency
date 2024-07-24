@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Property } from "@/data/properties";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 type Props = {
     property: Property;
@@ -45,7 +46,9 @@ export function PropertyCard({ property, className }: Props) {
                         <p className="text-lg font-semibold text-white lg:text-xl">{price}</p>
                     </div>
 
-                    <Button>View Property</Button>
+                    <Button asChild>
+                        <Link to={`/properties/${property.id}`}>View Property</Link>
+                    </Button>
                 </div>
             </div>
         </article>

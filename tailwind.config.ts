@@ -25,6 +25,7 @@ const config = {
             },
             screens: {
                 "3xl": "1920px",
+                "4xl": "2560px",
             },
             colors: {
                 border: "hsl(var(--border))",

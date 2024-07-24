@@ -8,7 +8,7 @@ import towerMobile from "@/assets/tower-mobile.webp";
 
 export function HeroSection() {
     return (
-        <div className="mx-auto grid max-w-screen-3xl auto-cols-auto grid-cols-1 lg:max-h-[622px] lg:grid-cols-2 lg:grid-rows-1 xl:max-h-[814px]">
+        <div className="max-w-screen-4xl mx-auto grid auto-cols-auto grid-cols-1 lg:max-h-[622px] lg:grid-cols-2 lg:grid-rows-1 xl:max-h-[814px]">
             <section className="flex px-2 lg:items-center lg:justify-center lg:pt-2">
                 <div className="w-full space-y-10 lg:max-w-2xl lg:space-y-12">
                     <div className="space-y-4 text-center md:text-start lg:space-y-5">

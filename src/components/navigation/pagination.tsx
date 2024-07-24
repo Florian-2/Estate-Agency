@@ -5,7 +5,7 @@ import {
     PaginationItem,
     PaginationEllipsis,
 } from "@/components/ui/pagination";
-import { DOTS, usePagination } from "@/hooks/use-pagination";
+import { usePagination, DOTS } from "@/hooks/pagination/use-pagination";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 

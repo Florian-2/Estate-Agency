@@ -1,7 +1,9 @@
 import { Pagination } from "@/components/navigation/pagination";
 import { PropertyCard } from "@/components/sections/properties/property-card";
 import { properties } from "@/data/properties";
-
+import { filter } from "@/data/search/filters";
+import { SearchProperty } from "@/data/search/type";
+import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const PER_PAGES = 8;
@@ -10,12 +12,15 @@ export function PropertiesResults() {
     const [searchParams, setSearchParams] = useSearchParams();
     const currentPage = Number(searchParams.get("page")) || 1;
 
-    const query = (searchParams.get("query")?.toLowerCase() as string) || "";
-
-    const results =
-        query.length > 0
-            ? properties.filter((property) => property.title.toLowerCase().includes(query))
-            : properties;
+    // Filtrer les annonces en utilisant les searchParams de l'URL
+    const results = useMemo(() => {
+        return properties.filter((property) => {
+            return Object.values(SearchProperty).every((param) => {
+                const paramValue = searchParams.get(param);
+                return filter(property, param as SearchProperty, paramValue);
+            });
+        });
+    }, [searchParams]);
 
     const startIndex = (currentPage - 1) * PER_PAGES;
     const endIndex = currentPage * PER_PAGES;

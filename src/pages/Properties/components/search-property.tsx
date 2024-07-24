@@ -2,49 +2,31 @@ import { FormEvent } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import { Box, CalendarDays, DollarSign, Home, MapPin, Search } from "lucide-react";
+import { FilterX, Search } from "lucide-react";
 
-const selects = [
-    {
-        name: "Location",
-        icon: <MapPin size={20} />,
-    },
-    {
-        name: "Property Type",
-        icon: <Home size={20} />,
-    },
-    {
-        name: "Property Size",
-        icon: <Box size={20} />,
-    },
-    {
-        name: "Pricing Range",
-        icon: <DollarSign size={20} />,
-    },
-    {
-        name: "Build Year",
-        icon: <CalendarDays size={20} />,
-    },
-];
+import { filters } from "@/data/search/filters";
+import { selectOptions } from "@/data/search/selects";
+
+import { FilterPopover } from "@/components/form/filter-popover";
+import { SelectFilter } from "@/components/form/select-filter";
 
 export function SearchProperty() {
-    const [, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const defaultValue = searchParams.get("query")?.toString() || undefined;
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
 
         const form = e.currentTarget as HTMLFormElement;
-        const query = new FormData(form).get("query") as string;
+        const query = new FormData(form).get("query")?.toString();
 
-        setSearchParams(query ? { query: query ?? "" } : undefined);
+        if (query) {
+            searchParams.set("query", query);
+            setSearchParams(searchParams);
+        } else {
+            searchParams.delete("query");
+            setSearchParams(searchParams);
+        }
     }
 
     return (
@@ -59,34 +41,36 @@ export function SearchProperty() {
                             placeholder="Search for a property"
                             name="query"
                             className="h-auto items-stretch border-none bg-background text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
+                            defaultValue={defaultValue}
                         />
-                        <Button className="gap-2 rounded-lg font-normal">
-                            <Search className="w-4 lg:w-4.5" />
-                            <span className="hidden md:inline-flex">Find Property</span>
-                        </Button>
+
+                        <div className="flex gap-2">
+                            <Button className="gap-2 rounded-lg font-normal">
+                                <Search className="w-4 lg:w-4.5" />
+                                <span className="hidden md:inline-flex">Find Property</span>
+                            </Button>
+
+                            {searchParams.size > 0 && (
+                                <Button
+                                    variant={"outline"}
+                                    className="gap-2 rounded-lg font-normal"
+                                    onClick={() => setSearchParams()}
+                                >
+                                    <FilterX className="w-4 lg:w-4.5" />
+                                    <span className="hidden md:inline-flex">Reset Filter</span>
+                                </Button>
+                            )}
+                        </div>
                     </div>
                 </form>
 
-                <div className="flex flex-wrap gap-5 rounded-lg bg-gray-10 p-2.5">
-                    {selects.map((select, i) => (
-                        <Select key={i}>
-                            <SelectTrigger className="min-w-52 flex-1 gap-2 bg-background">
-                                {select.icon}
-                                <Separator orientation="vertical" />
-                                <SelectValue placeholder={select.name} className="text-red-500" />
-                            </SelectTrigger>
+                <div className="flex flex-wrap gap-5 rounded-lg bg-gray-10 p-2.5 *:flex-1">
+                    {selectOptions.map((select, i) => (
+                        <SelectFilter key={i} select={select} />
+                    ))}
 
-                            <SelectContent>
-                                {Array.from({ length: 3 }).map((_, index) => (
-                                    <SelectItem
-                                        key={index}
-                                        value={`${select.name.toLowerCase()}-${index}`}
-                                    >
-                                        {select.name} {index}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
+                    {filters.map((filter, i) => (
+                        <FilterPopover key={i} filter={filter} />
                     ))}
                 </div>
             </div>
