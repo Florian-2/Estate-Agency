@@ -6,15 +6,12 @@ export interface Property {
     tags: string[];
     price: number;
     details: {
-        location: {
-            state: string;
-            city: string;
-        };
+        location: DetailsLocation;
         bedrooms: number;
         bathrooms: number;
         area: number;
         build_year: number;
-        picture: string[];
+        pictures: string[];
         details_price: {
             label: string;
             fees: {
@@ -24,6 +21,11 @@ export interface Property {
             }[];
         }[];
     };
+}
+
+export interface DetailsLocation {
+    state: string;
+    city: string;
 }
 
 export const properties: Property[] = [
@@ -44,7 +46,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 130,
             build_year: 2015,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -105,7 +107,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 180,
             build_year: 2019,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -166,7 +168,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 100,
             build_year: 2019,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -227,7 +229,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 120,
             build_year: 2014,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -288,7 +290,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 350,
             build_year: 2011,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -349,7 +351,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 200,
             build_year: 2014,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -420,7 +422,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 180,
             build_year: 2018,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -496,7 +498,7 @@ export const properties: Property[] = [
             bathrooms: 5,
             area: 400,
             build_year: 2018,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -572,7 +574,7 @@ export const properties: Property[] = [
             bathrooms: 6,
             area: 600,
             build_year: 2013,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -648,7 +650,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 80,
             build_year: 2017,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -719,7 +721,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 220,
             build_year: 2013,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -795,7 +797,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 150,
             build_year: 2018,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -866,7 +868,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 120,
             build_year: 2012,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -942,7 +944,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 60,
             build_year: 2012,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1013,7 +1015,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 200,
             build_year: 2013,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1089,7 +1091,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 100,
             build_year: 2023,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1160,7 +1162,7 @@ export const properties: Property[] = [
             bathrooms: 8,
             area: 800,
             build_year: 2021,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1236,7 +1238,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 250,
             build_year: 2024,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1307,7 +1309,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 120,
             build_year: 2024,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1378,7 +1380,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 100,
             build_year: 2016,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1454,7 +1456,7 @@ export const properties: Property[] = [
             bathrooms: 5,
             area: 500,
             build_year: 2016,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1530,7 +1532,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 300,
             build_year: 2019,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1606,7 +1608,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 180,
             build_year: 2015,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1677,7 +1679,7 @@ export const properties: Property[] = [
             bathrooms: 10,
             area: 1200,
             build_year: 2015,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1753,7 +1755,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 90,
             build_year: 2016,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1824,7 +1826,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 160,
             build_year: 2012,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1900,7 +1902,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 400,
             build_year: 2019,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -1976,7 +1978,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 70,
             build_year: 2021,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2047,7 +2049,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 280,
             build_year: 2022,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2118,7 +2120,7 @@ export const properties: Property[] = [
             bathrooms: 5,
             area: 500,
             build_year: 2014,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2194,7 +2196,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 180,
             build_year: 2023,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2270,7 +2272,7 @@ export const properties: Property[] = [
             bathrooms: 7,
             area: 900,
             build_year: 2006,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2346,7 +2348,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 40,
             build_year: 2006,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2417,7 +2419,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 100,
             build_year: 2010,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2488,7 +2490,7 @@ export const properties: Property[] = [
             bathrooms: 5,
             area: 600,
             build_year: 2002,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2564,7 +2566,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 280,
             build_year: 2024,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2640,7 +2642,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 350,
             build_year: 2015,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2716,7 +2718,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 90,
             build_year: 2023,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2787,7 +2789,7 @@ export const properties: Property[] = [
             bathrooms: 5,
             area: 400,
             build_year: 2012,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2863,7 +2865,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 150,
             build_year: 2017,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -2935,7 +2937,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 160,
             build_year: 2017,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3001,7 +3003,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 200,
             build_year: 2021,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3077,7 +3079,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 300,
             build_year: 2013,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3153,7 +3155,7 @@ export const properties: Property[] = [
             bathrooms: 3,
             area: 250,
             build_year: 2024,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3224,7 +3226,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 120,
             build_year: 2011,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3300,7 +3302,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 100,
             build_year: 2021,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3356,7 +3358,7 @@ export const properties: Property[] = [
             bathrooms: 5,
             area: 400,
             build_year: 2023,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3432,7 +3434,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 120,
             build_year: 2015,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3498,7 +3500,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 350,
             build_year: 2021,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3574,7 +3576,7 @@ export const properties: Property[] = [
             bathrooms: 4,
             area: 400,
             build_year: 2023,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3650,7 +3652,7 @@ export const properties: Property[] = [
             bathrooms: 1,
             area: 60,
             build_year: 2007,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",
@@ -3706,7 +3708,7 @@ export const properties: Property[] = [
             bathrooms: 2,
             area: 100,
             build_year: 2020,
-            picture: [
+            pictures: [
                 "https://plus.unsplash.com/premium_photo-1661877360520-f70603f7c0d8?q=80&w=1200",
                 "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1200",
                 "https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=1200",

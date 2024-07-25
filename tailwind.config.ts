@@ -78,6 +78,9 @@ const config = {
             backgroundImage: {
                 "gradient-130": "linear-gradient(130deg, var(--tw-gradient-stops) 40%)",
             },
+            gridTemplateRows: {
+                gallery: "150px 1fr",
+            },
             keyframes: {
                 "accordion-down": {
                     from: { height: "0" },
