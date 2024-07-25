@@ -228,14 +228,14 @@ function CarouselDots() {
     }, [emblaApi, onInit, onSelect]);
 
     return (
-        <div className="hidden sm:flex sm:gap-1.5 ">
+        <div className="flex gap-1.5 ">
             {scrollSnaps.map((_, index) => (
                 <button
                     key={index}
                     type="button"
                     aria-label={`Go to slide ${index + 1}`}
                     className={cn(
-                        "h-1.5 min-w-5 rounded-full bg-gray-30",
+                        "h-1 min-w-3 rounded-full bg-gray-30 sm:h-1 sm:min-w-5",
                         index === selectedIndex && "bg-primary",
                     )}
                     onClick={() => onDotButtonClick(index)}

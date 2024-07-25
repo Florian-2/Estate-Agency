@@ -5,6 +5,7 @@ import { Await, useLoaderData } from "react-router-dom";
 import { HeadingProperty } from "./components/heading";
 import { Container } from "@/components/sections/ui/container";
 import { Gallery } from "./components/gallery";
+import { Description } from "./components/description";
 
 export default function PropertyPage() {
     const { property } = useLoaderData() as { property: Property };
@@ -14,10 +15,12 @@ export default function PropertyPage() {
             <Await resolve={property}>
                 {(property: Property) => (
                     <Container>
-                        <section className="space-y-12">
+                        <section className="space-y-7 md:space-y-12">
                             <HeadingProperty {...property} location={property.details.location} />
 
-                            <Gallery images={property.details.pictures} />
+                            <Gallery images={[property.picture, ...property.details.pictures]} />
+
+                            <Description property={property} />
                         </section>
                     </Container>
                 )}

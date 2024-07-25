@@ -8,8 +8,8 @@ type Props = Pick<Property, "title" | "price"> & {
 
 export function HeadingProperty({ title, location, price }: Props) {
     return (
-        <div className="flex flex-wrap justify-between *:whitespace-nowrap">
-            <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:justify-between">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-between">
                 <h1 className="text-3xl">{title}</h1>
 
                 <div className="flex items-center gap-2 rounded-lg border p-2.5 text-white">
@@ -21,7 +21,7 @@ export function HeadingProperty({ title, location, price }: Props) {
             </div>
 
             <div className="flex flex-col">
-                <span className="text-gray-60">Price</span>
+                <span className="hidden text-gray-60 md:block">Price</span>
                 <span className="text-2xl font-medium">{currencyUS(price)}</span>
             </div>
         </div>

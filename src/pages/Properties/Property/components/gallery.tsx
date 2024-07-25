@@ -129,7 +129,7 @@ export function Gallery({ images }: Props) {
                     ))}
                 </CarouselContent>
 
-                <div className="mx-auto flex w-min items-center gap-2 rounded-full bg-gray-08 p-2.5">
+                <div className="flex w-full items-center justify-between gap-2 rounded-full bg-gray-08 p-2.5 md:mx-auto md:w-min">
                     <CarouselPrevious />
 
                     <CarouselDots />
