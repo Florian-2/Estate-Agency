@@ -60,8 +60,8 @@ export function FilterPopover({ filter }: Props) {
                                 name={filter.type + "_min"}
                                 defaultValue={min}
                                 className="h-10"
-                                min={min}
-                                max={max}
+                                min={filter.valueMinMax[0]}
+                                max={filter.valueMinMax[1]}
                             />
                         </div>
 
@@ -72,8 +72,8 @@ export function FilterPopover({ filter }: Props) {
                                 name={filter.type + "_max"}
                                 defaultValue={max}
                                 className="h-10"
-                                max={max}
-                                min={min}
+                                min={filter.valueMinMax[0]}
+                                max={filter.valueMinMax[1]}
                             />
                         </div>
                     </div>
