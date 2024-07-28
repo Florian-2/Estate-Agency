@@ -26,7 +26,7 @@ export function Gallery({ images }: Props) {
                 <img
                     src={image}
                     alt={`Carousel Main Image ${index + 1}`}
-                    className="h-full rounded-lg object-cover"
+                    className="h-full w-full rounded-lg object-cover"
                 />
             )),
         [images],
@@ -92,7 +92,7 @@ export function Gallery({ images }: Props) {
                 }}
                 className="rounded-lg  bg-gray-08 p-2 md:p-5"
             >
-                <CarouselContent className="h-full">
+                <CarouselContent className="h-full ">
                     {thumbnailImages.map((element, i) => (
                         <CarouselItem
                             className="basis-1/4 md:basis-1/6"
@@ -121,7 +121,7 @@ export function Gallery({ images }: Props) {
                 ]}
                 className="space-y-4 md:space-y-6"
             >
-                <CarouselContent>
+                <CarouselContent className="max-h-[500px]">
                     {mainImage.map((element, i) => (
                         <CarouselItem className="basis-full pl-5 md:basis-1/2" key={i}>
                             {element}

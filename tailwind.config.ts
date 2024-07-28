@@ -75,8 +75,11 @@ const config = {
                 md: "calc(var(--radius) - 2px)",
                 sm: "calc(var(--radius) - 4px)",
             },
+
             backgroundImage: {
                 "gradient-130": "linear-gradient(130deg, var(--tw-gradient-stops) 40%)",
+                "gradient-test":
+                    "linear-gradient(-45deg, hsl(263.4, 70%, 50.4%), hsl(263.4, 70%, 60.4%), hsl(263.4, 70%, 40.4%))",
             },
             gridTemplateRows: {
                 gallery: "150px 1fr",
@@ -90,10 +93,22 @@ const config = {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: "0" },
                 },
+                background: {
+                    "0%": {
+                        backgroundPosition: "0% 50%",
+                    },
+                    "50%": {
+                        backgroundPosition: "100% 50%",
+                    },
+                    "100%": {
+                        backgroundPosition: "0% 50%",
+                    },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                background: "background 4s ease infinite",
             },
         },
     },

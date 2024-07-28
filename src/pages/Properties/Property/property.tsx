@@ -6,6 +6,8 @@ import { HeadingProperty } from "./components/heading";
 import { Container } from "@/components/sections/ui/container";
 import { Gallery } from "./components/gallery";
 import { Description } from "./components/description";
+import { Design } from "./components/design";
+import { ListingPrice } from "./components/details-price/listing-price";
 
 export default function PropertyPage() {
     const { property } = useLoaderData() as { property: Property };
@@ -20,8 +22,19 @@ export default function PropertyPage() {
 
                             <Gallery images={[property.picture, ...property.details.pictures]} />
 
-                            <Description property={property} />
+                            <div className="flex flex-col gap-10 *:flex-1 lg:flex-row">
+                                <Description property={property} />
+                                <Design
+                                    title={property.title}
+                                    location={property.details.location}
+                                />
+                            </div>
                         </section>
+
+                        <ListingPrice
+                            price={property.price}
+                            details={property.details.details_price}
+                        />
                     </Container>
                 )}
             </Await>

@@ -22,8 +22,9 @@ function Info({ type, icon, value, suffix }: InfoProps) {
                 <p>{capitalize(type)}</p>
             </div>
 
-            <p className=" font-medium text-white">
+            <p className="font-medium text-white">
                 {value} {suffix}
+                <span></span>
             </p>
         </div>
     );

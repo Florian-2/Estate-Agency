@@ -15,7 +15,7 @@ export function HeadingProperty({ title, location, price }: Props) {
                 <div className="flex items-center gap-2 rounded-lg border p-2.5 text-white">
                     <MapPin size={20} />
                     <p className="text-base text-inherit">
-                        {location.state}, {location.city}
+                        {location.city}, {location.state}
                     </p>
                 </div>
             </div>

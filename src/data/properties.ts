@@ -12,20 +12,22 @@ export interface Property {
         area: number;
         build_year: number;
         pictures: string[];
-        details_price: {
-            label: string;
-            fees: {
-                fee_name: string;
-                description: string;
-                price: number;
-            }[];
-        }[];
+        details_price: DetailPrice[];
     };
 }
 
 export interface DetailsLocation {
     state: string;
     city: string;
+}
+
+export interface DetailPrice {
+    label: string;
+    fees: {
+        fee_name: string;
+        description: string;
+        price: number;
+    }[];
 }
 
 export const properties: Property[] = [
