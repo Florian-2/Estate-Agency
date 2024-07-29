@@ -33,7 +33,7 @@ export function ListingPrice({ price, details }: Props) {
                     <span className="text-3xl font-semibold">{currencyUS(price)}</span>
                 </div>
 
-                <div className="flex-grow space-y-10">
+                <div className="flex-grow space-y-5">
                     {details.map((detail, i) => (
                         <DetailPrice key={i} detail={detail} />
                     ))}

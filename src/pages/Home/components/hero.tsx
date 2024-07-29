@@ -5,6 +5,7 @@ import { statistics } from "@/data/statistics";
 import towerDesktop from "@/assets/tower-desktop.webp";
 import towerLaptop from "@/assets/tower-laptop.webp";
 import towerMobile from "@/assets/tower-mobile.webp";
+import { Link } from "@/components/navigation";
 
 export function HeroSection() {
     return (
@@ -23,7 +24,9 @@ export function HeroSection() {
 
                     <div className="flex flex-col gap-4 *:flex-1 md:flex-row md:*:flex-none">
                         <Button variant={"outline"}>Learn More</Button>
-                        <Button>Browse Properties</Button>
+                        <Button asChild>
+                            <Link to={"/properties"}>Browse Properties</Link>
+                        </Button>
                     </div>
 
                     <div className="flex flex-wrap gap-4">

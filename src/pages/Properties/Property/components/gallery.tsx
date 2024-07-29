@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useMediaQuery } from "@/hooks";
 
 type Props = {
     images: string[];
@@ -19,6 +21,7 @@ export function Gallery({ images }: Props) {
     const [mainApi, setMainApi] = useState<CarouselApi>();
     const [thumbnailApi, setThumbnailApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
+    const isDesktop = useMediaQuery("(min-width: 768px)");
 
     const mainImage = useMemo(
         () =>
@@ -26,7 +29,7 @@ export function Gallery({ images }: Props) {
                 <img
                     src={image}
                     alt={`Carousel Main Image ${index + 1}`}
-                    className="h-full w-full rounded-lg object-cover"
+                    className="h-full w-full cursor-grab rounded-lg object-cover"
                 />
             )),
         [images],
@@ -35,16 +38,18 @@ export function Gallery({ images }: Props) {
     const thumbnailImages = useMemo(
         () =>
             images.map((image, index) => (
-                <img
-                    className={cn(
-                        "aspect-square rounded-lg object-cover opacity-40 sm:aspect-video",
-                        index === current && "opacity-100",
-                    )}
-                    src={image}
-                    alt={`Carousel Thumbnail Image ${index + 1}`}
-                />
+                <AspectRatio ratio={isDesktop ? 16 / 9 : 1 / 1}>
+                    <img
+                        className={cn(
+                            "aspec h-full w-full cursor-pointer rounded-lg object-cover opacity-40",
+                            index === current && "opacity-100",
+                        )}
+                        src={image}
+                        alt={`Carousel Thumbnail Image ${index + 1}`}
+                    />
+                </AspectRatio>
             )),
-        [images, current],
+        [images, isDesktop, current],
     );
 
     useEffect(() => {
@@ -90,7 +95,7 @@ export function Gallery({ images }: Props) {
                     align: "end",
                     // slidesToScroll: "auto",
                 }}
-                className="rounded-lg  bg-gray-08 p-2 md:p-5"
+                className="rounded-lg bg-gray-08 p-2 md:p-3 lg:p-5"
             >
                 <CarouselContent className="h-full ">
                     {thumbnailImages.map((element, i) => (
@@ -112,16 +117,16 @@ export function Gallery({ images }: Props) {
                     loop: true,
                     slidesToScroll: "auto",
                 }}
-                plugins={[
-                    Autoplay({
-                        delay: 5000,
-                        stopOnInteraction: false,
-                        stopOnMouseEnter: true,
-                    }),
-                ]}
+                // plugins={[
+                //     Autoplay({
+                //         delay: 5000,
+                //         stopOnInteraction: false,
+                //         stopOnMouseEnter: true,
+                //     }),
+                // ]}
                 className="space-y-4 md:space-y-6"
             >
-                <CarouselContent className="max-h-[500px]">
+                <CarouselContent className="max-h-[550px]">
                     {mainImage.map((element, i) => (
                         <CarouselItem className="basis-full pl-5 md:basis-1/2" key={i}>
                             {element}
