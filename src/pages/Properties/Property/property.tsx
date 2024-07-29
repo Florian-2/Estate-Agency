@@ -8,6 +8,8 @@ import { Gallery } from "./components/gallery";
 import { Description } from "./components/description";
 import { Design } from "./components/design";
 import { ListingPrice } from "./components/details-price/listing-price";
+import { Contact } from "./components/contact";
+import { SectionFaq } from "@/components/sections/faq/section-faq";
 
 export default function PropertyPage() {
     const { property } = useLoaderData() as { property: Property };
@@ -35,6 +37,10 @@ export default function PropertyPage() {
                             price={property.price}
                             details={property.details.details_price}
                         />
+
+                        <Contact propertyName={property.title} />
+
+                        <SectionFaq />
                     </Container>
                 )}
             </Await>

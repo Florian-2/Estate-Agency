@@ -8,7 +8,7 @@ import { Section } from "@/components/sections/ui/section";
 import { questions } from "@/data/questions";
 import { QuestionCard } from "@/components/sections/faq/question-card";
 
-export function Faq() {
+export function SectionFaq() {
     const questionsList = questions.map((question) => (
         <QuestionCard key={question.id} question={question} />
     ));

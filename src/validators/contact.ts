@@ -23,10 +23,14 @@ export const contactFormSchema = z.object({
 
         return z.NEVER;
     }),
-    inquiryType: z.enum(INQUIRY_TYPE),
-    hearAboutUs: z.enum(HEAR_ABOUT_US),
     message: z.string().min(20).max(1_000),
     terms: z.literal(true),
 });
 
-export type ContactFormType = z.infer<typeof contactFormSchema>;
+export const contactAgencyFormShema = contactFormSchema.merge(
+    z.object({ inquiryType: z.enum(INQUIRY_TYPE), hearAboutUs: z.enum(HEAR_ABOUT_US) }),
+);
+export type ContactFormType = z.infer<typeof contactAgencyFormShema>;
+
+export const detailPropertyFormShema = contactFormSchema;
+export type DetailPropertyFormType = z.infer<typeof detailPropertyFormShema>;

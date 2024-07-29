@@ -7,11 +7,12 @@ import { Fragment } from "react/jsx-runtime";
 
 type Props = {
     detail: DetailPriceType;
+    defaultOpen: boolean;
 };
 
-export function DetailPrice({ detail }: Props) {
+export function DetailPrice({ detail, defaultOpen }: Props) {
     return (
-        <Collapsible defaultOpen className="rounded-lg border">
+        <Collapsible defaultOpen={defaultOpen} className="rounded-lg border">
             <CollapsibleTrigger className="text-xl">{detail.label}</CollapsibleTrigger>
 
             <CollapsibleContent asChild>

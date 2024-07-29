@@ -35,7 +35,7 @@ export function ListingPrice({ price, details }: Props) {
 
                 <div className="flex-grow space-y-5">
                     {details.map((detail, i) => (
-                        <DetailPrice key={i} detail={detail} />
+                        <DetailPrice key={i} detail={detail} defaultOpen={i === 0} />
                     ))}
                 </div>
             </div>

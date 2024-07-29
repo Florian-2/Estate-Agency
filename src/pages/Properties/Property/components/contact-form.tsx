@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { ContactFormType, contactAgencyFormShema } from "@/validators/contact";
+import { DetailPropertyFormType, contactFormSchema } from "@/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -13,25 +13,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { HEAR_ABOUT_US, INQUIRY_TYPE } from "@/data/contact-form";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export function ContactForm() {
-    const form = useForm<ContactFormType>({
-        resolver: zodResolver(contactAgencyFormShema),
+    const form = useForm<DetailPropertyFormType>({
+        resolver: zodResolver(contactFormSchema),
         defaultValues: {
             firstName: "",
             lastName: "",
             phone: "",
-            inquiryType: undefined,
-            hearAboutUs: undefined,
             email: "",
             message: "",
             terms: undefined,
@@ -39,19 +29,21 @@ export function ContactForm() {
     });
     const { toast } = useToast();
 
-    function onSubmit(values: ContactFormType) {
+    function onSubmit(values: DetailPropertyFormType) {
         toast({
             variant: "success",
             title: `Hello ${values.firstName} ${values.lastName}, your message has been sent, we will get back to you within 24 hours.`,
             duration: 7_000,
         });
+
+        form.reset();
     }
 
     return (
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="grid grid-cols-1 gap-6 rounded-xl border p-5 md:grid-cols-2 md:gap-10 md:p-10 lg:grid-cols-3"
+                className="grid w-full grid-cols-1 gap-6 rounded-xl border p-5 md:grid-cols-2 md:gap-10 md:p-10 lg:grid-cols-2"
             >
                 <FormField
                     control={form.control}
@@ -111,56 +103,6 @@ export function ContactForm() {
                     )}
                 />
 
-                <FormField
-                    control={form.control}
-                    name="inquiryType"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Inquiry Type</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Select Inquiry Type" />
-                                    </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                    {INQUIRY_TYPE.map((type, i) => (
-                                        <SelectItem key={i} value={type}>
-                                            {type}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="hearAboutUs"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>How Did You Hear About Us?</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                    {HEAR_ABOUT_US.map((value, i) => (
-                                        <SelectItem key={i} value={value}>
-                                            {value}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
                 <FormField
                     control={form.control}
                     name="message"

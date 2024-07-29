@@ -41,7 +41,7 @@ export function Gallery({ images }: Props) {
                 <AspectRatio ratio={isDesktop ? 16 / 9 : 1 / 1}>
                     <img
                         className={cn(
-                            "aspec h-full w-full cursor-pointer rounded-lg object-cover opacity-40",
+                            "h-full w-full cursor-pointer rounded-lg object-cover opacity-40",
                             index === current && "opacity-100",
                         )}
                         src={image}
@@ -124,7 +124,7 @@ export function Gallery({ images }: Props) {
                 ]}
                 className="space-y-4 md:space-y-6"
             >
-                <CarouselContent className="max-h-[550px]">
+                <CarouselContent className="max-h-[350px] md:max-h-[450px] lg:max-h-[550px]">
                     {mainImage.map((element, i) => (
                         <CarouselItem className="basis-full pl-5 md:basis-1/2" key={i}>
                             {element}
