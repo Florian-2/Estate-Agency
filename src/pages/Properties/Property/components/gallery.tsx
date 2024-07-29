@@ -92,8 +92,7 @@ export function Gallery({ images }: Props) {
             <CarouselEmbla
                 setApi={setThumbnailApi}
                 opts={{
-                    align: "end",
-                    // slidesToScroll: "auto",
+                    align: "start",
                 }}
                 className="rounded-lg bg-gray-08 p-2 md:p-3 lg:p-5"
             >
@@ -113,17 +112,16 @@ export function Gallery({ images }: Props) {
             <CarouselEmbla
                 setApi={setMainApi}
                 opts={{
-                    align: "end",
+                    align: "start",
                     loop: true,
-                    slidesToScroll: "auto",
                 }}
-                // plugins={[
-                //     Autoplay({
-                //         delay: 5000,
-                //         stopOnInteraction: false,
-                //         stopOnMouseEnter: true,
-                //     }),
-                // ]}
+                plugins={[
+                    Autoplay({
+                        delay: 2000,
+                        stopOnInteraction: false,
+                        stopOnMouseEnter: true,
+                    }),
+                ]}
                 className="space-y-4 md:space-y-6"
             >
                 <CarouselContent className="max-h-[550px]">
