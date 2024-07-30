@@ -2,8 +2,8 @@ import {
     SectionHeader,
     SectionTitle2,
     SectionDescription,
-} from "@/components/sections/ui/header-section";
-import { Section } from "@/components/sections/ui/section";
+} from "@/components/utils/ui/header-section";
+import { Section } from "@/components/utils/ui/section";
 import { ContactForm } from "./contact-form";
 
 export function ContactSection() {

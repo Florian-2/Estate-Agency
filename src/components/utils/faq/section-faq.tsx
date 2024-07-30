@@ -1,12 +1,12 @@
-import { Carousel } from "@/components/sections/ui/carousel";
+import { Carousel } from "@/components/utils/ui/carousel";
 import {
     SectionHeader,
     SectionTitle2,
     SectionDescription,
-} from "@/components/sections/ui/header-section";
-import { Section } from "@/components/sections/ui/section";
+} from "@/components/utils/ui/header-section";
+import { Section } from "@/components/utils/ui/section";
 import { questions } from "@/data/questions";
-import { QuestionCard } from "@/components/sections/faq/question-card";
+import { QuestionCard } from "@/components/utils/faq/question-card";
 
 export function SectionFaq() {
     const questionsList = questions.map((question) => (

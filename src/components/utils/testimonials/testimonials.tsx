@@ -1,7 +1,7 @@
-import { Carousel } from "./ui/carousel";
-import { SectionHeader, SectionTitle2, SectionDescription } from "./ui/header-section";
-import { Section } from "./ui/section";
-import { TestimonialCard } from "./testimonials/testimonials-card";
+import { Carousel } from "../ui/carousel";
+import { SectionHeader, SectionTitle2, SectionDescription } from "../ui/header-section";
+import { Section } from "../ui/section";
+import { TestimonialCard } from "../testimonials/testimonials-card";
 import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {

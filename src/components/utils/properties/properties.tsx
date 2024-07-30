@@ -1,8 +1,8 @@
-import { Carousel } from "./ui/carousel";
+import { Carousel } from "../ui/carousel";
 import { properties } from "@/data/properties";
-import { PropertyCard } from "./properties/property-card";
-import { SectionHeader, SectionTitle2, SectionDescription } from "./ui/header-section";
-import { Section } from "./ui/section";
+import { PropertyCard } from "../properties/property-card";
+import { SectionHeader, SectionTitle2, SectionDescription } from "../ui/header-section";
+import { Section } from "../ui/section";
 
 export function Properties() {
     const propertiesList = properties

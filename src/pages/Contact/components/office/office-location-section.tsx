@@ -2,8 +2,8 @@ import {
     SectionHeader,
     SectionTitle2,
     SectionDescription,
-} from "@/components/sections/ui/header-section";
-import { Section } from "@/components/sections/ui/section";
+} from "@/components/utils/ui/header-section";
+import { Section } from "@/components/utils/ui/section";
 import { OfficeTabs } from "./tabs/office-tabs";
 
 export function OfficeLocationSection() {

@@ -1,5 +1,5 @@
-import { Hero } from "@/components/sections/hero/hero";
-import { SectionTitle1, SectionDescription } from "@/components/sections/ui/header-section";
+import { Hero } from "@/components/utils/hero/hero";
+import { SectionTitle1, SectionDescription } from "@/components/utils/ui/header-section";
 
 export function HeroContact() {
     return (

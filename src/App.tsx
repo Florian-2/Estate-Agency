@@ -3,7 +3,7 @@ import { Header } from "./layout/header";
 import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Footer } from "./layout/footer";
-import { ExploreProperties } from "./components/sections/explore-properties";
+import { ExploreProperties } from "./components/utils/properties/explore-properties";
 import { Loading } from "./components/ui/loader";
 
 function App() {

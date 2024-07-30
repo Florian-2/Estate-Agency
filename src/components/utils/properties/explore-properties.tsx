@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/navigation";
-import { SectionDescription, SectionTitle2 } from "./ui/header-section";
+import { SectionDescription, SectionTitle2 } from "../ui/header-section";
 import Squares from "@/assets/squares.svg";
 
 export function ExploreProperties() {

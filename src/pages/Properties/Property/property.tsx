@@ -3,13 +3,13 @@ import { Property } from "@/data/properties";
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
 import { HeadingProperty } from "./components/heading";
-import { Container } from "@/components/sections/ui/container";
+import { Container } from "@/components/utils/ui/container";
 import { Gallery } from "./components/gallery";
 import { Description } from "./components/description";
 import { Design } from "./components/design";
 import { ListingPrice } from "./components/details-price/listing-price";
 import { Contact } from "./components/contact";
-import { SectionFaq } from "@/components/sections/faq/section-faq";
+import { SectionFaq } from "@/components/utils/faq/section-faq";
 
 export default function PropertyPage() {
     const { property } = useLoaderData() as { property: Property };

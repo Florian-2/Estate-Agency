@@ -1,5 +1,5 @@
 import { Pagination } from "@/components/navigation/pagination";
-import { PropertyCard } from "@/components/sections/properties/property-card";
+import { PropertyCard } from "@/components/utils/properties/property-card";
 import { properties } from "@/data/properties";
 import { filter } from "@/data/search/filters";
 import { SearchProperty } from "@/data/search/type";

@@ -2,7 +2,7 @@ import {
     SectionHeader,
     SectionTitle2,
     SectionDescription,
-} from "@/components/sections/ui/header-section";
+} from "@/components/utils/ui/header-section";
 import { BoxImages } from "./galery/box-image";
 import { Img } from "./galery/img";
 

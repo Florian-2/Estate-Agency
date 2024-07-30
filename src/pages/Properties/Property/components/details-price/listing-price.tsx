@@ -5,7 +5,7 @@ import {
     SectionHeader,
     SectionTitle2,
     SectionDescription,
-} from "@/components/sections/ui/header-section";
+} from "@/components/utils/ui/header-section";
 import { Note } from "@/components/ui/note";
 
 type Props = {
