@@ -75,15 +75,17 @@ const config = {
                 md: "calc(var(--radius) - 2px)",
                 sm: "calc(var(--radius) - 4px)",
             },
-
             backgroundImage: {
                 "gradient-130": "linear-gradient(130deg, var(--tw-gradient-stops) 40%)",
                 "gradient-test":
                     "linear-gradient(-45deg, hsl(263.4, 70%, 50.4%), hsl(263.4, 70%, 60.4%), hsl(263.4, 70%, 40.4%))",
             },
+            gridTemplateColumns: {
+                "auto-fit": "repeat(auto-fit, minmax(250px, 1fr))",
+            },
             gridTemplateRows: {
                 gallery: "150px 1fr",
-                test: "1fr auto 1fr",
+                "auto-3": "1fr auto 1fr",
             },
             keyframes: {
                 "accordion-down": {
