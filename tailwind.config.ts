@@ -83,6 +83,7 @@ const config = {
             },
             gridTemplateRows: {
                 gallery: "150px 1fr",
+                test: "1fr auto 1fr",
             },
             keyframes: {
                 "accordion-down": {
