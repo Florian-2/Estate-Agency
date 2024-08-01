@@ -19,7 +19,10 @@ export function Testimonials() {
                 </SectionDescription>
             </SectionHeader>
 
-            <Carousel elements={testimonialsList} />
+            <Carousel
+                elements={testimonialsList}
+                className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            />
         </Section>
     );
 }

@@ -8,12 +8,14 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type Props = {
     elements: JSX.Element[];
+    className?: string;
 };
 
-export function Carousel({ elements }: Props) {
+export function Carousel({ elements, className }: Props) {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
@@ -49,7 +51,7 @@ export function Carousel({ elements }: Props) {
         >
             <CarouselContent>
                 {elements.map((element, i) => (
-                    <CarouselItem className="pl-5 md:basis-1/2 lg:basis-1/3 xl:basis-1/4" key={i}>
+                    <CarouselItem className={cn("pl-5 ", className)} key={i}>
                         {element}
                     </CarouselItem>
                 ))}

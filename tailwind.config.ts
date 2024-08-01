@@ -82,6 +82,7 @@ const config = {
             },
             gridTemplateColumns: {
                 "auto-fit": "repeat(auto-fit, minmax(250px, 1fr))",
+                "auto-3": "1fr auto 1fr",
             },
             gridTemplateRows: {
                 gallery: "150px 1fr",

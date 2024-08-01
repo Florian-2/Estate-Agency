@@ -24,7 +24,7 @@ export function SectionFaq() {
                 </SectionDescription>
             </SectionHeader>
 
-            <Carousel elements={questionsList} />
+            <Carousel elements={questionsList} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4" />
         </Section>
     );
 }

@@ -20,7 +20,10 @@ export function Properties() {
                 </SectionDescription>
             </SectionHeader>
 
-            <Carousel elements={propertiesList} />
+            <Carousel
+                elements={propertiesList}
+                className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            />
         </Section>
     );
 }
